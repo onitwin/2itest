@@ -7,7 +7,7 @@ Please state any assumptions you’ve made.";*/
 /* pseudocode:
 have number increase by its own value untill value X is reached
 then have number increase by initial value +1 untill two times X is reached
-then have number increase by initial value +2 untill three times X is reache
+then have number increase by initial value +2 untill three times X is reached
 */
 
 /*ASSUMPTIONS:
@@ -28,8 +28,8 @@ the first loop, and the start point of the third loop is the end point of the se
 function singleIteration(a, x, start = 0) {
   let target = start;
   while (target < x) {
-    console.log(`Target currently at ${target}`);
     target += a;
+    console.log(`Target currently at ${target}`);
   }
   console.log("ITERATION TARGET:", target);
   return target;
