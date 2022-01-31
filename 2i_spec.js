@@ -7,18 +7,13 @@ describe("Iterator Function suite,", function () {
     assert.strictEqual(10, answer);
   });
 
-  xit("should return be able to return total value ", function () {
-    const answer = incrementFunctions.iteratorFunction(3, 30, 10);
-    assert.strictEqual(40, answer);
+  it("should return be able to return total value ", function () {
+    const answer = incrementFunctions.iteratorFunction(3, 30);
+    assert.strictEqual(92, answer);
   });
 
-  xit("should return target value ", function () {
-    const answer = iteratorFunction(1, 2);
-    assert.strictEqual(3, answer);
-  });
-
-  xit("should return target value ", function () {
-    const answer = iteratorFunction(1, 2);
-    assert.strictEqual(3, answer);
+  it("should return be able to handle high values ", function () {
+    const answer = incrementFunctions.iteratorFunction(100, 2000);
+    assert.strictEqual(6060, answer);
   });
 });

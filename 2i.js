@@ -14,13 +14,14 @@ then have number increase by initial value +2 untill three times X is reache
 Reusability
 Return Value as Validation
 Evidence of increment change
+Assume all values ate positive integers
 Since there is no guaruntee that a given target (X) is a multiple of A or A+1 or A+2
 (e.g if A is 12 and X is 100, the 9th increment exceeds target value) so
 I am assuming the target of X is a greater than or equal to measure before updating increments
 As evidence that increment change is taking place, I will console log out at each step increase with 
 the current value.
 I am also assuming a return value to be given once target of 3X is reached. 
-I am assuing th iterations are concurrent, that is, the start point of the second loop is the result of
+I am assuming the iterations are concurrent, that is, the start point of the second loop is the result of
 the first loop, and the start point of the third loop is the end point of the second loop.
 */
 
@@ -30,6 +31,7 @@ function singleIteration(a, x, start = 0) {
     console.log(`Target currently at ${target}`);
     target += a;
   }
+  console.log("ITERATION TARGET:", target);
   return target;
 }
 
@@ -37,6 +39,7 @@ function iteratorFunction(a, x) {
   const firstPass = singleIteration(a, x);
   const secondPass = singleIteration(a + 1, x * 2, firstPass);
   const thirdPass = singleIteration(a + 2, x * 3, secondPass);
+  console.log("FINAL RESULT", thirdPass);
   return thirdPass;
 }
 
