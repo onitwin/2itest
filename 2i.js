@@ -20,20 +20,24 @@ I am assuming the target of X is a greater than or equal to measure before updat
 As evidence that increment change is taking place, I will console log out at each step increase with 
 the current value.
 I am also assuming a return value to be given once target of 3X is reached. 
+I am assuing th iterations are concurrent, that is, the start point of the second loop is the result of
+the first loop, and the start point of the third loop is the end point of the second loop.
 */
 
-function singleIteration(a, x) {
-  const start = a;
-  let result = 0;
-  for (let i = 0; i < x; i += start) {
-    console.log(`Current increment is ${i}`);
-    result = i;
+function singleIteration(a, x, start = 0) {
+  let target = start;
+  while (target < x) {
+    console.log(`Target currently at ${target}`);
+    target += a;
   }
-  return result;
+  return target;
 }
 
 function iteratorFunction(a, x) {
-  return result;
+  const firstPass = singleIteration(a, x);
+  const secondPass = singleIteration(a + 1, x * 2, firstPass);
+  const thirdPass = singleIteration(a + 2, x * 3, secondPass);
+  return thirdPass;
 }
 
 module.exports = {
